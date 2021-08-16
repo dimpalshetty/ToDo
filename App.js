@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, FlatList, SectionList} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, Text, View, FlatList, SectionList, Button} from 'react-native';
 import Header from './src/components/header';
 import TodoItem from './src/components/todoItem';
 import AddTodo from './src/components/addTodo';
@@ -11,20 +11,27 @@ export default function App(){
      {text: 'Buy Groceries', key: 2},
      {text: 'Checkup', key: 3},
    ]);
-   const data = [
-     {
-       title: 'Task Description',
-       data: ['a', 'b', 'v', 'q', 't']
-     },
-     {
-      title: 'Task Description',
-      data: ['z', 'b', 'v', 'q', 't']
-    },
-    {
-      title: 'Task Description',
-      data: ['a', 'b', 'v', 'q', 't']
-    },
-   ]
+
+   const [name, setName] = useState('Dimpal');
+//  useEffect(()=> {
+//    console.log("use effect ran");
+//    console.log(name);
+//  }, [name]);
+
+  //  const data = [
+  //    {
+  //      title: 'Task Description',
+  //      data: ['a', 'b', 'v', 'q', 't']
+  //    },
+  //    {
+  //     title: 'Task Description',
+  //     data: ['z', 'b', 'v', 'q', 't']
+  //   },
+  //   {
+  //     title: 'Task Description',
+  //     data: ['a', 'b', 'v', 'q', 't']
+  //   },
+  //  ]
    const pressHandler = (key) => {
      setTodos((prevTodos)=> {
        return prevTodos.filter(todo => todo.key!=key);
@@ -67,6 +74,8 @@ export default function App(){
         )}
 
       /> */}
+      {/* <Button title="Change the name" onPress={()=>setName('shetty')}></Button>
+      <Text>{name}</Text> */}
 
       </View>
 
