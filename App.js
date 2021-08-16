@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {StyleSheet, Text, View, FlatList, SectionList, Button} from 'react-native';
 import Header from './src/components/header';
 import TodoItem from './src/components/todoItem';
@@ -13,9 +13,12 @@ export default function App(){
    ]);
 
    const [name, setName] = useState('Dimpal');
+  //  const renderCount = useRef(1); 
+   
 //  useEffect(()=> {
 //    console.log("use effect ran");
 //    console.log(name);
+//    renderCount.current=renderCount.current+1;
 //  }, [name]);
 
   //  const data = [
@@ -74,9 +77,9 @@ export default function App(){
         )}
 
       /> */}
-      {/* <Button title="Change the name" onPress={()=>setName('shetty')}></Button>
-      <Text>{name}</Text> */}
-
+      <Button title="Change the name" onPress={()=>setName('shetty')}></Button>
+      {/* <Text>{name} rendered this by {renderCount.current}</Text> */}
+       
       </View>
 
     </View>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
 
 
@@ -7,17 +7,23 @@ import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
 export default function AddTodo({submitHandler}) {
 
     const [text, setText] = useState('');
+    // const inputRef = useRef();
+    // function focus() {
+    //     inputRef.current.focus()
+    // }
     const changeHandler = (val) => {
          setText(val);
     }
   return (
       <View>
           <TextInput
+        //   ref={inputRef}
           style={styles.input}
               placeholder= "add here "
               onChangeText={changeHandler}
           />
 <Button onPress= {()=>submitHandler(text)} title="Add" color='coral' />
+{/* <Button title="Direct to input" onPress={focus}/> */}
          
       </View>
   )
